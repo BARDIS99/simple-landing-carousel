@@ -1,2 +1,10 @@
-# simple-landing-carousel
-Simple landing page with CSS carousel using Python Flask
+# Simple Landing Page with Carousel
+
+Python Flask + CSS landing page with image carousel.
+
+## Run
+```bash
+pip install -r requirements.txt
+python app.py
+```
+Open http://127.0.0.1:5000

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome</h1>
+        <p>Simple landing page with carousel</p>
+    </header>
+
+    <div class="carousel">
+        <div class="slides">
+            <div class="slide active" style="background:#4a90d9">Slide 1</div>
+            <div class="slide" style="background:#50c878">Slide 2</div>
+            <div class="slide" style="background:#e74c3c">Slide 3</div>
+        </div>
+        <button class="prev" onclick="move(-1)">&#10094;</button>
+        <button class="next" onclick="move(1)">&#10095;</button>
+    </div>
+
+    <footer>
+        <p>Built with Python + CSS</p>
+    </footer>
+
+    <script>
+        let i = 0;
+        const slides = document.querySelectorAll('.slide');
+        function move(n) {
+            slides[i].classList.remove('active');
+            i = (i + n + slides.length) % slides.length;
+            slides[i].classList.add('active');
+        }
+        setInterval(() => move(1), 3000);
+    </script>
+</body>
+</html>
